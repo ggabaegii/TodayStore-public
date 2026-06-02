@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_history_record.xml : 이전 기록 행 -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp">
+
+    <!-- 완료 체크 아이콘 -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="12dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:strokeWidth="0dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check"
+            android:contentDescription="완료"
+            app:tint="@color/white" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 할 일 텍스트 -->
+    <TextView
+        android:id="@+id/tvHistoryTask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/colorHint"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        android:fontFamily="@font/clipartkorea_medium"
+        tools:text="매장 바닥 청소" />
+
+    <!-- 완료자  -->
+    <TextView
+        android:id="@+id/tvHistoryMeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorHint"
+        android:textSize="11sp"
+        android:fontFamily="@font/clipartkorea_medium"
+        tools:text="홍길동  09:15" />
+
+</LinearLayout>

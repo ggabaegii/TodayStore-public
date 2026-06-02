@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/xml/file_paths.xml -->
+<!-- FileProvider 경로 설정 — 카메라 촬영 파일 공유에 사용 -->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-files-path
+        name="inventory_images"
+        path="Pictures/" />
+</paths>

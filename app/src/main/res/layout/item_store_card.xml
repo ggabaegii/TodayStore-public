@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_store_card.xml
+    매장 목록 RecyclerView 아이템 카드
+    ─────────────────────────────────────
+    구조:
+    MaterialCardView
+     └─ ConstraintLayout
+         ├─ 좌측: 매장 아이콘 (원형 배경)
+         ├─ 중앙: 매장명 + 주소
+         └─ 우측: 화살표 아이콘
+    ─────────────────────────────────────
+    상태:
+    - 기본: 테두리 없음 (strokeWidth=0)
+    - 선택: Primary 색상 테두리 강조 (Java에서 처리)
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardStore"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/white"
+    app:strokeWidth="1.5dp"
+    app:strokeColor="@color/colorDivider">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- 매장 아이콘 배경 원형 -->
+        <FrameLayout
+            android:id="@+id/frameStoreIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_store_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/ivStoreIcon"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_store"
+                android:tint="@color/colorPrimary"
+                android:contentDescription="매장 아이콘" />
+
+        </FrameLayout>
+
+        <!-- 매장명 -->
+        <TextView
+            android:id="@+id/tvStoreName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="8dp"
+            android:text="강남점"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/clipartkorea_medium"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/frameStoreIcon"
+            app:layout_constraintEnd_toStartOf="@id/ivArrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvStoreAddress"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="강남점" />
+
+        <!-- 매장 주소 -->
+        <TextView
+            android:id="@+id/tvStoreAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="4dp"
+            android:text="서울시 강남구 테헤란로 123"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="12sp"
+            android:fontFamily="@font/clipartkorea_medium"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/frameStoreIcon"
+            app:layout_constraintEnd_toStartOf="@id/ivArrow"
+            app:layout_constraintTop_toBottomOf="@id/tvStoreName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="서울시 강남구 테헤란로 123" />
+
+        <!-- 화살표 아이콘 -->
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_chevron_right"
+            android:tint="@color/colorHint"
+            android:contentDescription="선택"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

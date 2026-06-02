@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    strings.xml
+    매장 관리 앱 문자열 리소스
+-->
+<resources>
+
+    <string name="app_name">오늘의 가게</string>
+    <string name="app_subtitle">스마트한 매장 운영의 시작</string>
+
+    <!-- 로그인 화면 -->
+    <string name="label_login">로그인</string>
+    <string name="hint_user_id">아이디를 입력하세요</string>
+    <string name="hint_password">비밀번호를 입력하세요</string>
+    <string name="btn_login">로그인</string>
+    <string name="btn_login_loading">로그인 중...</string>
+
+    <!-- 에러 메시지 -->
+    <string name="error_empty_user_id">아이디를 입력해 주세요.</string>
+    <string name="error_empty_password">비밀번호를 입력해 주세요.</string>
+    <string name="error_login_failed">아이디 또는 비밀번호가 올바르지 않습니다.</string>
+    <string name="error_network">네트워크 연결을 확인해 주세요.</string>
+    <string name="error_server">서버 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.</string>
+
+    <!-- 접근성 -->
+    <string name="content_desc_logo">매장 관리 로고</string>
+    <string name="content_desc_toggle_password">비밀번호 표시/숨김</string>
+
+    <!-- 버전 -->
+    <string name="app_version">v1.0.0</string>
+
+</resources>

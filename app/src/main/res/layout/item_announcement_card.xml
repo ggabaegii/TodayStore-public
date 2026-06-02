@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_announcement_card.xml
+    전달사항 / 특이사항 목록 카드 아이템
+    ─────────────────────────────────────
+    특이사항: 좌측 주황 강조선 View 표시
+    전달사항: 좌측 강조선 View 숨김
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardAnnouncement"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/white"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 좌측 강조선 (특이사항만 표시) -->
+        <View
+            android:id="@+id/viewAccentBar"
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorSecondary"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <!-- 카드 본문 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <!-- 상단: 제목 + 날짜 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp">
+
+                <!-- 특이사항 뱃지 -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardTypeBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/colorSecondaryContainer"
+                    app:strokeWidth="0dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="7dp"
+                        android:paddingVertical="2dp"
+                        android:text="특이사항"
+                        android:textColor="@color/colorSecondary"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/clipartkorea_medium" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/tvAnnouncementTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="7월 매장 청소 일정 안내"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/clipartkorea_medium"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="7월 매장 청소 일정 안내" />
+
+                <TextView
+                    android:id="@+id/tvAnnouncementDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="01.20"
+                    android:textColor="@color/colorHint"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/clipartkorea_medium"
+                    tools:text="01.20" />
+
+            </LinearLayout>
+
+            <!-- 하단: 작성자 + 내용 미리보기 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- 작성자 아이콘 -->
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_account_circle"
+                    android:tint="@color/colorHint"
+                    android:contentDescription="작성자" />
+
+                <TextView
+                    android:id="@+id/tvAuthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="홍길동"
+                    android:textColor="@color/colorHint"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/clipartkorea_medium"
+                    tools:text="홍길동" />
+
+                <!-- 구분 점 -->
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:background="@drawable/bg_dot"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tvContentPreview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="이번 주 토요일 오전 10시에 매장 전체 청소를 진행합니다."
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/clipartkorea_medium"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="이번 주 토요일 오전 10시에 매장 전체 청소를 진행합니다." />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

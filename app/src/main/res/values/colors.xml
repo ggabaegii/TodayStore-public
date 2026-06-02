@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    colors.xml
+    매장 관리 앱 색상 정의
+    ────────────────────────────────
+    Primary   : #1E6FD9  신뢰감 있는 파란색
+    Secondary : #F5A623  강조용 주황색
+    Background: #F4F6F9  밝은 회색
+    Surface   : #FFFFFF
+    Error     : #D32F2F
+    ────────────────────────────────
+-->
+<resources>
+
+    <!-- Primary -->
+    <color name="colorPrimary">#1E6FD9</color>
+    <color name="colorPrimaryDark">#155BBF</color>
+    <color name="colorPrimaryLight">#4E8FE4</color>
+    <color name="colorPrimaryContainer">#EEF4FC</color>
+
+    <!-- Secondary -->
+    <color name="colorSecondary">#F5A623</color>
+    <color name="colorSecondaryDark">#D48900</color>
+    <color name="colorSecondaryContainer">#FFF3E0</color>
+
+    <!-- Background & Surface -->
+    <color name="colorBackground">#F4F6F9</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Error -->
+    <color name="colorError">#D32F2F</color>
+    <color name="colorErrorContainer">#FFEBEE</color>
+
+    <!-- Text -->
+    <color name="colorTextPrimary">#1A2332</color>
+    <color name="colorTextSecondary">#5A6B7D</color>
+    <color name="colorHint">#9CAAB8</color>
+
+    <!-- UI Elements -->
+    <color name="colorDivider">#E8EDF3</color>
+    <color name="colorInputStrokeDefault">#D8DFE8</color>
+    <color name="colorInputStrokeFocused">#1E6FD9</color>
+    <color name="colorInputStrokeError">#D32F2F</color>
+
+    <!-- Button Disabled -->
+    <color name="colorButtonDisabled">#A8C8F0</color>
+
+
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_routine_sub.xml : 루틴 관리 화면 하위 항목 행 -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="28dp"
+    android:paddingVertical="10dp">
+
+    <View
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:background="@drawable/bg_dot"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/tvSubItemText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="13sp"
+        android:fontFamily="@font/clipartkorea_medium"
+        tools:text="포스 마감 처리" />
+
+    <ImageView
+        android:id="@+id/btnDeleteSubItem"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_close"
+        android:tint="#D8DFE8"
+        android:contentDescription="삭제"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="2dp" />
+
+</LinearLayout>

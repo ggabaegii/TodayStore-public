@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- bottom_sheet_history.xml : 이전 기록 캘린더 + 목록 -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_bottom_sheet_handle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:paddingBottom="8dp"
+        android:text="이전 기록"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/clipartkorea_medium" />
+
+    <!-- 캘린더 -->
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dateTextAppearance="@android:style/TextAppearance.Small"
+        android:firstDayOfWeek="2" />
+
+    <!-- 구분선 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider"
+        android:layout_marginTop="4dp" />
+
+    <!-- 날짜 레이블 -->
+    <TextView
+        android:id="@+id/tvHistoryDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="8dp"
+        android:text="날짜를 선택하세요"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/clipartkorea_medium" />
+
+    <!-- 기록 없음 -->
+    <TextView
+        android:id="@+id/tvHistoryNoRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingVertical="16dp"
+        android:text="해당 날짜에 완료 기록이 없습니다"
+        android:textColor="@color/colorHint"
+        android:textSize="13sp"
+        android:fontFamily="@font/clipartkorea_medium"
+        android:visibility="gone" />
+
+    <!-- 기록 목록 (스크롤 가능) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="200dp"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:id="@+id/containerHistoryItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp" />
+
+    </ScrollView>
+
+</LinearLayout>

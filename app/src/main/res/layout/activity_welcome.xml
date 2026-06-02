@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5F0E4"
+    android:padding="32dp">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_store"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오늘의 가게"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/clipartkorea_medium"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="반갑습니다 👋"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/clipartkorea_medium"
+        android:layout_marginBottom="60dp" />
+
+    <Button
+        android:id="@+id/btnWelcomeStart"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:text="시작하기"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/clipartkorea_medium"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btnWelcomeLogout"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="로그아웃"
+        android:textColor="#B3FFFFFF"
+        android:textSize="14sp"
+        android:backgroundTint="#c34c4c"
+        android:fontFamily="@font/clipartkorea_medium"/>
+
+    <Button
+        android:id="@+id/btnWelcomeLogin"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="로그인하기"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/clipartkorea_medium"
+        android:visibility="gone" />
+</LinearLayout>

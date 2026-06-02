@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- dialog_add_routine.xml : 새 루틴 만들기 다이얼로그 -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="4dp">
+
+    <!-- 루틴 이름 -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilRoutineName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:hint="루틴 이름 (예: 마감 할 일)"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxStrokeColor="@color/selector_input_stroke"
+        app:boxStrokeWidth="1.5dp"
+        app:hintTextColor="@color/colorHint"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRoutineName"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:fontFamily="@font/clipartkorea_medium"
+            android:background="@null" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 요일 힌트 -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilRoutineDayHint"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="요일 힌트 (예: 월/수/금, 선택사항)"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxStrokeColor="@color/selector_input_stroke"
+        app:boxStrokeWidth="1.5dp"
+        app:hintTextColor="@color/colorHint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRoutineDayHint"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="14sp"
+            android:textColor="@color/colorTextPrimary"
+            android:fontFamily="@font/clipartkorea_medium"
+            android:background="@null" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="* 루틴 생성 후 항목을 추가할 수 있습니다"
+        android:textColor="@color/colorHint"
+        android:textSize="11sp"
+        android:fontFamily="@font/clipartkorea_medium" />
+
+</LinearLayout>

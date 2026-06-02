@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_store_select.xml
+    매장 선택 화면
+    ─────────────────────────────────────
+    구조:
+    CoordinatorLayout
+     ├─ AppBarLayout (TopAppBar)
+     └─ NestedScrollView (인사말 + RecyclerView / 빈 상태)
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/rootView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <!-- ════════════════════════════════════
+         AppBar
+         ════════════════════════════════════ -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:liftOnScroll="true"
+        android:background="@color/colorPrimary">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:title="매장 선택"
+            app:titleTextColor="@color/white"
+            app:titleTextAppearance="@style/TextAppearance.Stock.Toolbar.Title"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/white"
+            app:navigationContentDescription="뒤로가기">
+
+            <!-- 마이페이지 버튼 -->
+            <ImageButton
+                android:id="@+id/btnProfile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="마이페이지"
+                android:padding="8dp"
+                android:src="@drawable/ic_account_circle"
+                android:tint="@color/white" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ════════════════════════════════════
+         본문 영역
+         ════════════════════════════════════ -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/contentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="32dp"
+            >
+
+            <!-- ── 인사말 영역 ── -->
+            <LinearLayout
+                android:id="@+id/layoutGreeting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/tvGreeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안녕하세요, 홍길동님"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/clipartkorea_medium"
+                    tools:text="안녕하세요, 홍길동님" />
+
+                <TextView
+                    android:id="@+id/tvSubGreeting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="근무할 매장을 선택해주세요"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/clipartkorea_medium" />
+
+            </LinearLayout>
+
+            <!-- ── 매장 개수 표시 ── -->
+            <TextView
+                android:id="@+id/tvStoreCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/colorHint"
+                android:textSize="12sp"
+                android:fontFamily="@font/clipartkorea_medium"
+                tools:text="총 3개 매장" />
+
+            <!-- ── 매장 목록 RecyclerView ── -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewStores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="8dp"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_store_card"
+                android:visibility="visible" />
+
+            <!-- ── 빈 상태 (매장 없음) ── -->
+            <LinearLayout
+                android:id="@+id/layoutEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="80dp"
+                android:paddingBottom="80dp"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_store_empty"
+                    android:tint="#C5D0DC"
+                    android:contentDescription="배정된 매장 없음" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="배정된 매장이 없습니다"
+                    android:textColor="@color/colorHint"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/clipartkorea_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="관리자에게 문의해 주세요"
+                    android:textColor="#B0BEC5"
+                    android:textSize="13sp"
+                    android:fontFamily="@font/clipartkorea_medium" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FAB — 매장 추가 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="매장 추가"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/colorPrimary"
+        app:tint="@color/white"
+        app:elevation="6dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

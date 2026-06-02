@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/nav_inventory"
+        android:icon="@drawable/ic_inventory"
+        android:title="재고" />
+
+    <item
+        android:id="@+id/nav_announcement"
+        android:icon="@drawable/ic_announcement"
+        android:title="전달사항" />
+
+    <item
+        android:id="@+id/nav_checklist"
+        android:icon="@drawable/ic_checklist"
+        android:title="체크리스트" />
+
+</menu>

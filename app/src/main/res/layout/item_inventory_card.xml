@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_inventory_card.xml
+    재고 목록 RecyclerView 아이템
+    ─────────────────────────────────────
+    구조:
+    MaterialCardView
+     └─ ConstraintLayout
+         ├─ 좌측: 썸네일 이미지 (64×64dp)
+         ├─ 중앙: 품목명 + 카테고리 칩 + 수량
+         └─ 우측: 수정 아이콘 버튼
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardInventory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/white"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- ── 썸네일 이미지 ── -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardThumbnail"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/colorPrimaryContainer"
+            app:strokeWidth="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- 실제 이미지 (없을 때 기본 아이콘) -->
+            <ImageView
+                android:id="@+id/ivThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_inventory"
+                android:tint="@color/colorPrimary"
+                android:padding="16dp"
+                android:contentDescription="재고 이미지"
+                tools:src="@drawable/ic_inventory" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── 품목명 ── -->
+        <TextView
+            android:id="@+id/tvItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="4dp"
+            android:text="A4 용지"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/clipartkorea_medium"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/cardThumbnail"
+            app:layout_constraintEnd_toStartOf="@id/btnEdit"
+            app:layout_constraintTop_toTopOf="@id/cardThumbnail"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/chipCategory"
+            tools:text="A4 용지" />
+
+        <!-- ── 카테고리 칩 ── -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_marginTop="4dp"
+            android:text="비품"
+            android:textSize="11sp"
+            android:fontFamily="@font/clipartkorea_medium"
+            android:textColor="@color/colorPrimary"
+            app:chipBackgroundColor="@color/colorPrimaryContainer"
+            app:chipStrokeColor="@color/colorPrimaryContainer"
+            app:chipStrokeWidth="0dp"
+            app:chipMinHeight="26dp"
+            app:chipStartPadding="6dp"
+            app:chipEndPadding="6dp"
+            app:ensureMinTouchTargetSize="false"
+            app:layout_constraintStart_toStartOf="@id/tvItemName"
+            app:layout_constraintTop_toBottomOf="@id/tvItemName"
+            app:layout_constraintBottom_toTopOf="@id/tvQuantity"
+            tools:text="비품" />
+
+        <!-- ── 수량 ── -->
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="23개"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="13sp"
+            android:fontFamily="@font/clipartkorea_medium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tvItemName"
+            app:layout_constraintTop_toBottomOf="@id/chipCategory"
+            app:layout_constraintBottom_toBottomOf="@id/cardThumbnail"
+            tools:text="23개" />
+
+        <!-- ── 수정 아이콘 버튼 ── -->
+        <ImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_edit"
+            android:tint="@color/colorHint"
+            android:contentDescription="수정"
+            android:padding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
